@@ -72,11 +72,16 @@
   <p class="dates">Effective 22 September 2026 · Last updated 22 September 2026</p>
 
   <div class="summary">
-    <p><strong>CRISPOT does not collect, transmit, sell, or share any personal or
-    user data.</strong> Everything the app handles — including your test results —
-    is created and kept on your own device. The released app contains no
-    analytics, no advertising, and no account system, and it has no permission to
-    access the internet.</p>
+    <p><strong>Cellagen Technology does not collect, receive, sell, or share your
+    personal information or your test results.</strong> Everything the app
+    handles — including every diagnostic result — is created and kept on your own
+    device. CRISPOT has no user accounts, no advertising, and no tracking, and we
+    operate no server that receives your data.</p>
+    <p style="margin-top:.8rem">One exception, set out in full in section 6: the
+    Google ML Kit component that decodes reagent QR codes sends Google limited
+    technical data about itself, such as your device model and how long a scan
+    took. It does not send your test results, images from your camera, or
+    anything that identifies you.</p>
   </div>
 
   <h2>1. Who we are</h2>
@@ -91,13 +96,15 @@
     <li>Your location, or any approximate or precise position data</li>
     <li>Photographs, video, or audio</li>
     <li>Your test results, measurements, or any other health information</li>
-    <li>Device identifiers, advertising IDs, or usage and analytics data</li>
-    <li>Crash reports or diagnostic telemetry</li>
+    <li>Advertising identifiers. CRISPOT does not use an advertising ID and contains no advertising software</li>
+    <li>Analytics about how you use the app, or any record of your activity in it</li>
+    <li>Crash reports (see section 6 for the technical diagnostics that the Google QR-scanning component sends to Google)</li>
     <li>Contacts, calendar, files, messages, or browsing activity</li>
   </ul>
-  <p>The released version of CRISPOT does not request the Android
-  <code>INTERNET</code> permission. It is therefore technically incapable of
-  sending your information to us or to anyone else.</p>
+  <p>We operate no servers and no accounts, so there is no system of ours for
+  your information to reach. The app does hold network access, which the Google
+  ML Kit component used for QR-code scanning requires; section 6 explains what
+  that component sends and to whom.</p>
 
   <h2>3. Information stored on your device</h2>
   <p>To do its job, CRISPOT writes the following to private storage on your
@@ -141,7 +148,7 @@
       </tr>
       <tr>
         <td>Camera</td>
-        <td>To scan reagent QR codes. Decoding happens entirely on your device. No image or video is recorded, saved, or transmitted.</td>
+        <td>To scan reagent QR codes. Decoding happens entirely on your device, and no image or video is recorded, saved, or transmitted. See section 6 for the technical diagnostics the decoding component reports to Google.</td>
       </tr>
       <tr>
         <td>Notifications and foreground service</td>
@@ -160,12 +167,30 @@
   a file to another app or service, that app or service's own privacy policy
   governs what happens to it.</p>
 
-  <h2>6. Third-party services</h2>
-  <p>CRISPOT contains no advertising networks, no analytics or attribution SDKs,
-  and no crash-reporting services. The app is built with open-source software
-  libraries for functions such as Bluetooth communication, QR decoding, and PDF
-  generation. These libraries run entirely on your device and do not send
-  information to us or to their authors.</p>
+  <h2>6. Third-party components</h2>
+  <p>CRISPOT contains no advertising networks, no attribution or marketing
+  software, and no third-party crash-reporting service. Most of the libraries it
+  is built from — for Bluetooth communication, PDF generation, and file
+  sharing — run entirely on your device and send nothing anywhere.</p>
+  <p>One component is different and we want to be explicit about it. Reagent
+  QR codes are decoded by <strong>Google ML Kit</strong>. The decoding itself
+  happens entirely on your device: no image, video, or scan content is uploaded.
+  However, by Google's own documentation, ML Kit reports limited technical
+  diagnostics back to Google, namely:</p>
+  <ul>
+    <li>Device information, such as manufacturer, model, operating system version and build</li>
+    <li>Performance metrics for the component, such as how long an operation took</li>
+  </ul>
+  <p>Google states that this data is encrypted in transit and is not passed by
+  Google to third parties. Google does not currently provide a way for
+  developers to switch this reporting off. It contains none of your test
+  results, none of your camera content, and nothing that identifies you
+  personally. Google's handling of it is governed by the
+  <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy
+  Policy</a>; their description of what ML Kit collects is published at
+  <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">developers.google.com/ml-kit/android-data-disclosure</a>.</p>
+  <p>This is the only data any part of CRISPOT sends off your device on its own.
+  Cellagen Technology does not receive it and has no access to it.</p>
 
   <h2>7. Health information</h2>
   <p>Diagnostic test results may constitute health information. CRISPOT treats
@@ -189,8 +214,9 @@
   <h2>9. Security</h2>
   <p>Information is stored in app-private storage protected by the operating
   system's own application sandbox and, on a device with a screen lock, by that
-  device's encryption. Because no information is transmitted to a server, there
-  is no server-side store of your data to be breached. Please protect your
+  device's encryption. Because your results are never transmitted to us and we
+  run no server that holds them, there is no database of your data to be
+  breached. Please protect your
   device with a screen lock and keep its operating system up to date.</p>
 
   <h2>10. Children's privacy</h2>
